@@ -1,0 +1,13 @@
+{
+  "config": "hugo.yaml,pages.json",
+  "theme": "template",
+  "sample": "exampleSite",
+  "version": "0.143.0",
+  "slug": "hugo-profile",
+  "npm": [],
+  "asset_build": [],
+  "generator": "3.1",
+  "repo": "https://github.com/JeongMin80/personal-portfolio.git",
+  "baseURL": "https://jeongmin80.github.io/personal-portfolio/",
+  "audited": false
+}
