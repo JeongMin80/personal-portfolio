@@ -617,29 +617,15 @@ params:
     enable: true
     # title: "Custom Name"
     items:
-      - company: "Facebook"
-        companyUrl: "https://example.com"
+      - company: "Holysoft Studios"
+        # companyUrl: "https://example.com"
         jobs:
-          - name: "Senior Software Developer"
-            date: "Jan 2023 - present"
-            content: "I am currently working as a senior software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city."
-            info:
-              content: Working as a senior software developer
-            featuredItems:
-              fontAwesomeIcons:
-                - icon: fa-brands fa-react
-                  url: https://react.dev/
-                  tooltip: Example tooltip content
-                - icon: fab fa-x-twitter
-                  url: https://example.com
-                  # tooltip: Example tooltip content
-              customIcons:
-                - icon: /fav.png
-                  url: "https://example.com"
-                  tooltip: Example tooltip content
-          - name: "Software Developer"
-            date: "Jan 2022 - Dec 2023"
-            content: "I worked as a software developer. I worked on a project that will be used to help people find the best way to get around the city."
+          - name: "Game Development Intern"
+            date: "Jan 2026"
+            content: |-
+              - Learned game development through hands-on practice during an approximately one-month internship in the Philippines.
+              - Developed a personal game based on a self-selected concept.
+              - Published the completed game project on GitHub.
 
       - company: "Amazon"
         companyUrl: "https://example.com"
@@ -706,16 +692,11 @@ params:
         GPA: "3.81 out of 4.5"
         content: |-
           **Required Major Courses**
-
-          - **Linear Algebra:** Explores how vectors and matrices are used to represent and solve mathematical problems.
-
-          - **Algorithms:** Examines how to design efficient algorithms and analyze the resources they require.
-
-          - **Databases:** Introduces how to organize, store, and query data using relational databases.
-
-          - **Artificial Intelligence:** Introduces how intelligent systems use search and learning to solve problems.
-
-          - **Operating Systems:** Explains how an operating system manages processes, memory, and shared resources.
+          - **Linear Algebra:** Covers the theory and applications of linear algebra in engineering, physics, and economics, developing mathematical reasoning, problem-solving skills, and the ability to apply these concepts in computer science.
+          - **Algorithms:** Studies problem-solving methods and their efficiency as a foundation across computer science applications. Develops the ability to understand problems, design algorithms, analyze their efficiency, and create new algorithms.
+          - **Databases:** Covers the theory behind building databases from large volumes of data and retrieving information efficiently.
+          - **Artificial Intelligence:** Explores engineering approaches to implementing different aspects of human intelligence on computers and develops the skills needed to build intelligent programs.
+          - **Operating Systems:** Develops an understanding of operating system principles and their practical application through process management, memory management, virtual memory, and input/output.
       - title: "High School"
         school:
           name: "Uoosuk High School"
@@ -723,26 +704,26 @@ params:
         date: "2019 - 2021"
 
   # Achievements
-  achievements:
-    enable: true
+  # achievements:
+    # enable: true
     # title: "Custom Name"
-    items:
-      - title: Google kickstart runner
-        content: I solved all problems with optimal solution.
-        url: https://example.com
-        image: /images/achievement.jpg
-      - title: Facebook Hackathon Winner
-        content: Developed a product using Artificial Intelligence.
-        image: /images/achievement.jpg
-      - title: Hugo Profile
-        content: Developed a theme and getting 1K+ downloads per month.
-        url: "https://github.com/gurusabarish/hugo-profile"
-        image: /images/achievement.jpg
-      - title: Microsoft Imagine Runner
-        content: We are developed a product which can help others.
-      - title: Google Summer of Code
-        content: Contributed to a open source project.
-        url: https://example.com
+    # items:
+      #- title: Google kickstart runner
+      #  content: I solved all problems with optimal solution.
+      #  url: https://example.com
+      #  image: /images/achievement.jpg
+      #- title: Facebook Hackathon Winner
+      #  content: Developed a product using Artificial Intelligence.
+      #  image: /images/achievement.jpg
+      #- title: Hugo Profile
+      #  content: Developed a theme and getting 1K+ downloads per month.
+      #  url: "https://github.com/gurusabarish/hugo-profile"
+      #  image: /images/achievement.jpg
+      #- title: Microsoft Imagine Runner
+      #  content: We are developed a product which can help others.
+      #- title: Google Summer of Code
+      #  content: Contributed to a open source project.
+      #  url: https://example.com
 
   # projects
   projects:
@@ -795,12 +776,12 @@ params:
             url: https://github.com/gurusabarish/HugoProfileV2
 
   #Contact
-  contact:
-    enable: true
+  #contact:
+    #enable: true
     # title: "Custom Name"
-    content: My inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!
-    btnName: Mail me
-    btnLink: mailto:gurusabarisha@gmail.com
+    # content: My inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!
+    # btnName: Mail me
+    # btnLink: mailto:gurusabarisha@gmail.com
     # formspree:
     #   enable: true # `contact.email` value will be ignored
     #   formId: abcdefgh # Take it from your form's endpoint, like 'https://formspree.io/f/abcdefgh'
