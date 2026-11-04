@@ -53,6 +53,51 @@
     transition: transform 0.3s;
 }
 
+#projects .project-card-clickable {
+    cursor: pointer;
+}
+
+#projects .project-review-link {
+    color: inherit !important;
+}
+
+#projects .project-review-link:focus-visible {
+    outline: none;
+}
+
+#projects .project-review-link:focus-visible::after {
+    border-radius: 1rem;
+    outline: 2px solid var(--primary-color);
+    outline-offset: -3px;
+}
+
+#projects .project-external-link {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    min-height: 32px;
+}
+
+#projects .project-external-link:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+#projects .project-image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 180px;
+    aspect-ratio: 16 / 9;
+    padding: 1rem;
+    background-color: var(--secondary-background-color);
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+
 #projects .float-end .btn {
     transition: none;
     border-radius: .5rem !important;

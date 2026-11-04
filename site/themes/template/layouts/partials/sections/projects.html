@@ -5,10 +5,22 @@
         <h3 class="text-center">{{ $projects.title | default .Site.Params.projects.title | default (i18n "projects") }}</h3>
         <div class="row justify-content-center px-3 px-md-5">
             {{ range $projects.items | default .Site.Params.projects.items }}
+            {{ $detailURL := "" }}
+            {{ with .page }}
+                {{ with $.Site.GetPage . }}
+                    {{ $detailURL = .RelPermalink }}
+                {{ else }}
+                    {{ errorf "Project detail page not found: %s" . }}
+                {{ end }}
+            {{ end }}
             <div class="col-lg-4 col-md-6 my-3">
-                <div class="card my-3 h-100" title="{{ .title }}">
+                <div class="card my-3 h-100{{ if $detailURL }} project-card-clickable{{ end }}" title="{{ .title }}">
                     <div class="card-head">
+                        {{ if .image }}
                         <img class="card-img-top" src="{{ .image }}" alt="{{ .title }}">
+                        {{ else }}
+                        <div class="project-image-placeholder" aria-hidden="true">{{ .imageText | default .title }}</div>
+                        {{ end }}
                     </div>
                     <div class="card-body bg-transparent p-3">
                         <div class="pb-2 bg-transparent">
@@ -16,7 +28,13 @@
                             <span class="badge badge-secondary">{{ . }}</span>
                             {{ end }}
                         </div>
-                        <h5 class="card-title bg-transparent mt-1">{{ .title }}</h5>
+                        <h5 class="card-title bg-transparent mt-1">
+                            {{ if $detailURL }}
+                            <a class="stretched-link project-review-link" href="{{ $detailURL }}" aria-label="Read review: {{ .title }}">{{ .title }}</a>
+                            {{ else }}
+                            {{ .title }}
+                            {{ end }}
+                        </h5>
                         <div class="card-text bg-transparent secondary-font">
                             {{ .content }}
                         </div>
@@ -25,14 +43,15 @@
                     <div class="card-footer py-3">
                         {{ range .links }}
                         <span class="m-1 mx-2">
-                            <a href="{{ .url }}" target="_blank">
-                                <i class="{{ .icon }}"></i>
+                            <a class="project-external-link" href="{{ .url }}" target="_blank" rel="noopener noreferrer"
+                                {{ with .name }}title="{{ . }}" aria-label="{{ . }}"{{ end }}>
+                                <i class="{{ .icon }}" aria-hidden="true"></i>
                             </a>
                         </span>
                         {{ end }}
                         {{ if .featured }}
                         <span class="float-end">
-                            <a class="btn btn-sm" href="{{ .featured.link }}" target="_blank">
+                            <a class="btn btn-sm project-external-link" href="{{ .featured.link }}" target="_blank" rel="noopener noreferrer">
                                 {{ .featured.name }}
                             </a>
                         </span>
