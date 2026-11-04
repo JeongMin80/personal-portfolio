@@ -564,27 +564,32 @@ params:
     enable: true
     intro: "Hi, my name is"
     title: "Jeongmin Lee."
-    subtitle: "Interested in AI and Computer Vision"
-    content: "I'm a third-year undergraduate student in the Division of Computer Science and Engineering at Jeonbuk National University."
-    image: /images/hero.svg
+    content: "I'm a third-year undergraduate student in the Division of Computer Science and Engineering at Jeonbuk National University, with interests in artificial intelligence and computer vision."
+    image: /images/profile.png
     bottomImage:
       enable: true
     # roundImage: true # Make hero image circular | default false
     button:
       enable: true
       name: "Resume"
-      url: "#"
-      download: true
-      newPage: false
+      url: "files/resume.pdf"
+      download: false
+      newPage: true
     socialLinks:
       fontAwesomeIcons:
         - icon: fab fa-github
-          url: https://example.com
-        - icon: fab fa-x-twitter
-          url: https://example.com
-      customIcons:
-        - icon: /fav.png
-          url: "https://example.com"
+          name: "GitHub"
+          url: "https://github.com/JeongMin80" # Your GitHub profile URL
+        - icon: fab fa-instagram
+          name: "Instagram"
+          url: "https://www.instagram.com/ljmin7239/" # Your Instagram profile URL
+        - icon: fas fa-envelope
+          name: "Copy email address"
+          action: "copy-email"
+          url: "leejeongmin2838@gmail.com" # mailto:your-email@example.com
+        - icon: fas fa-blog
+          name: "Blog"
+          url: "#" # Your blog URL
 
   # About
   about:

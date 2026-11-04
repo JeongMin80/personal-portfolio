@@ -1,6 +1,7 @@
 {{ define "head" }}
 <meta name="description" content={{ .Site.Params.description }}>
-<link rel="stylesheet" href="{{ (printf "%scss/index.css" (.Site.Params.staticPath | default "")) | relURL }}" media="all">
+{{ $indexCSS := resources.Get "css/index.css" | fingerprint "sha256" }}
+<link rel="stylesheet" href="{{ $indexCSS.RelPermalink }}" integrity="{{ $indexCSS.Data.Integrity }}" media="all">
 <link rel="stylesheet" href="{{ (printf "%scss/projects.css" (.Site.Params.staticPath | default "")) | relURL }}" media="all">
 
 <!-- fontawesome -->

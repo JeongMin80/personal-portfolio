@@ -10,23 +10,25 @@
                 <h1>
                     {{ $hero.title }}
                 </h1>
+                {{ with $hero.subtitle }}
                 <h2>
-                    {{ $hero.subtitle }}
+                    {{ . }}
                 </h2>
+                {{ end }}
                 <p class="hero-content">
                     {{ $hero.content | markdownify }}
                 </p>
                 <div class="row">
+                    {{ if .Site.Params.hero.button.enable }}
                     <div class="col-auto h-100">
-                        {{ if .Site.Params.hero.button.enable }}
-                        <a href="{{ .Site.Params.hero.button.url }}" class="btn" {{ cond .Site.Params.hero.button.download "download" "" }}
-			  {{ if .Site.Params.hero.button.newPage | default true }}
-                          target="_blank"
+                        <a href="{{ .Site.Params.hero.button.url | relURL }}" class="btn" {{ cond .Site.Params.hero.button.download "download" "" }}
+			  {{ if .Site.Params.hero.button.newPage }}
+                          target="_blank" rel="noopener noreferrer"
                           {{ end }}>
                             {{ $hero.button.name | default .Site.Params.hero.button.name }}
                         </a>
-                        {{ end }}
                     </div>
+                    {{ end }}
                     <div class="col-auto px-0 h-100">
                         {{- partial "sections/hero/social.html" . -}}
                     </div>
@@ -309,4 +311,7 @@
     </div>
     {{ end }}
 </section>
+<div id="hero-copy-status" role="status" aria-live="polite" aria-atomic="true">
+    <div id="hero-copy-toast" class="hero-copy-toast" hidden></div>
+</div>
 {{ end }}

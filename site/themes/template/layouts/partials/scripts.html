@@ -100,6 +100,11 @@
 <script src="{{ (printf "%sjs/contact.js" (.Site.Params.staticPath | default "")) | relURL }}"></script>
 {{ end }}
 
+{{ if and .IsHome .Site.Params.hero.enable }}
+{{ $heroSocialJS := resources.Get "js/hero-social.js" | fingerprint "sha256" }}
+<script defer src="{{ $heroSocialJS.RelPermalink }}" integrity="{{ $heroSocialJS.Data.Integrity }}"></script>
+{{ end }}
+
 {{ if (.Site.Params.customScripts | default false) }}
 {{ .Site.Params.customScripts | safeHTML }}
 {{ end }}

@@ -116,33 +116,55 @@ header .navbar.animate {
 
 #hero .image.animate img {
     animation: fade-in 1s ease-out;
-    transition: box-shadow 0.3s;
 }
 
-#hero .image.animate img:hover {
-    box-shadow: 0 0 11px rgb(15 80 100 / 20%);
-    filter: contrast(1.2);
-}
-
-#hero a.btn.social-icon {
+#hero a.btn.social-icon,
+#hero button.btn.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 2.75rem;
+    height: 2.75rem;
+    appearance: none;
+    background-color: transparent;
     color: var(--primary-color) !important;
-    line-height: 0%;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: inherit;
+    line-height: 1;
     border-radius: 50%;
     margin-top: 50px;
-    padding: 0.7rem;
+    padding: 0;
     border: 1px solid var(--primary-color);
+    vertical-align: middle;
     transition: none;
 }
 
-#hero a.btn.social-icon img {
+#hero .social-icon img,
+#hero .social-icon svg {
     width: 1em;
+    height: 1em;
+    flex: none;
 }
 
-#hero a.btn.social-icon:hover {
+#hero .copy-email-icon {
+    fill: currentColor;
+    pointer-events: none;
+}
+
+#hero .social-icon:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
+#hero a.btn.social-icon:hover,
+#hero button.btn.social-icon:hover {
     opacity: 0.8;
 }
 
-#hero a.btn {
+#hero a.btn,
+#hero button.btn {
     margin-top: 50px;
     padding: 0.7rem 1.75rem;
     border: 1px solid var(--primary-color);
@@ -151,19 +173,50 @@ header .navbar.animate {
     transition: none;
 }
 
-#hero a.btn:focus {
+#hero a.btn:focus,
+#hero button.btn:focus {
     box-shadow: none;
 }
 
-#hero a.btn:hover {
+#hero a.btn:hover,
+#hero button.btn:hover {
     background-color: var(--secondary-color) !important;
     color: var(--text-color) !important;
     opacity: 0.9;
 }
 
-#hero a.btn.social-icon:hover {
+#hero a.btn.social-icon:hover,
+#hero button.btn.social-icon:hover {
     background-color: var(--background-color) !important;
     opacity: 0.7;
+}
+
+.hero-copy-toast {
+    position: fixed;
+    z-index: 1100;
+    left: 50%;
+    bottom: 1.5rem;
+    transform: translateX(-50%);
+    width: max-content;
+    max-width: calc(100vw - 2rem);
+    padding: 0.85rem 1.2rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 0.75rem;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-align: center;
+    pointer-events: none;
+}
+
+.hero-copy-toast[hidden] {
+    display: none !important;
+}
+
+.hero-copy-toast:not([hidden]) {
+    display: block !important;
 }
 
 #hero .hero-content > a {
