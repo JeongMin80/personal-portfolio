@@ -71,7 +71,8 @@ header .navbar.animate {
 /* hero */
 
 #hero {
-    min-height: 100vh;
+    min-height: auto;
+    padding-bottom: 0 !important;
     line-height: 2rem;
     max-width: 100%;
 }
@@ -243,6 +244,19 @@ header .navbar.animate {
 
 
 /* about me */
+#about {
+    /* Adjust the space between Hero and the About heading here. */
+    --hero-about-gap: 170px;
+    /* Adjust the space between the About heading and its content here. */
+    --about-content-gap: 30px;
+    padding-top: var(--hero-about-gap) !important;
+}
+
+#about .about-body {
+    padding-top: var(--about-content-gap);
+    padding-bottom: 3rem;
+}
+
 #about h3 {
     color: var(--text-secondary-color) !important;
 }
@@ -260,8 +274,8 @@ header .navbar.animate {
 
 #about ul {
     display: grid;
-    grid-template-columns: repeat(2, minmax(140px, 200px));
-    gap: 0px 10px;
+    grid-template-columns: repeat(3, minmax(140px, 200px));
+    gap: 0px 160px;
     padding: 0px;
     margin: 20px 0px 0px;
     overflow: hidden;
