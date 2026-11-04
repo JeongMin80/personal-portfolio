@@ -563,9 +563,9 @@ params:
   hero:
     enable: true
     intro: "Hi, my name is"
-    title: "Isabella."
-    subtitle: "I build things for the web"
-    content: "A passionate web app developer. I tend to make use of modern web technologies to build websites that look great, feel fantastic, and function correctly."
+    title: "Jeongmin Lee."
+    subtitle: "Interested in AI and Computer Vision"
+    content: "I'm a third-year undergraduate student in the Division of Computer Science and Engineering at Jeonbuk National University."
     image: /images/hero.svg
     bottomImage:
       enable: true
