@@ -53,6 +53,7 @@
     <nav class="pt-3 navbar navbar-expand-lg {{ if .Site.Params.animate }}animate{{ end }}">
         <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
             <!-- navbar brand -->
+            {{ if not (.Site.Params.navbar.disableBrand | default false) }}
             <a class="navbar-brand primary-font text-wrap" href="{{ .Site.Home.RelPermalink }}">
                 {{ if and (or (.Site.Params.favicon) (.Site.Params.navbar.brandLogo)) (.Site.Params.navbar.showBrandLogo | default true) }}
                 <img src="{{ .Site.Params.navbar.brandLogo | default .Site.Params.favicon }}" width="30" height="30"
@@ -62,6 +63,7 @@
                 {{ .Site.Params.navbar.brandName | default .Site.Params.title }}
                 {{ end }}
             </a>
+            {{ end }}
 
             {{ if not (.Site.Params.navbar.disableSearch | default false) }}
                 <div>
@@ -71,7 +73,7 @@
             {{ end }}
 
             <!-- navbar toggler -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
                 aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                 <svg aria-hidden="true" height="24" viewBox="0 0 16 16" version="1.1" width="24" data-view-component="true">
                     <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"></path>
