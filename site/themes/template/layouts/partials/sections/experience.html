@@ -62,7 +62,11 @@
                                                 
                                                 {{ if eq $jobIdx 0 }}
                                                     <small>-</small>
+                                                    {{ if $companyUrl }}
                                                     <a href="{{ $companyUrl }}" target="_blank">{{ $company }}</a>
+                                                    {{ else }}
+                                                    <span>{{ $company }}</span>
+                                                    {{ end }}
                                                 {{ end }}
                                             </div>
                                             <div class="d-block">
