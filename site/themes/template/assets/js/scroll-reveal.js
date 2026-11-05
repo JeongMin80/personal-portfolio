@@ -30,8 +30,15 @@
       { threshold: 0 }
     );
 
-    containers.forEach(function (container) {
+    // A late script must not hide content that the browser has already shown.
+    // The Hero's CSS handles its initial entrance from the very first paint.
+    const initiallyVisible = containers.map(function (container) {
+      const rect = container.getBoundingClientRect();
+      return rect.bottom > 0 && rect.top < window.innerHeight;
+    });
+    containers.forEach(function (container, index) {
       container.classList.add("scroll-reveal");
+      container.classList.toggle("is-visible", initiallyVisible[index]);
     });
     pendingFrame = window.requestAnimationFrame(function () {
       containers.forEach(function (container) {

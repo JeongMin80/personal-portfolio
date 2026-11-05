@@ -126,4 +126,9 @@ html.theme-transitioning .scroll-reveal:focus-within > * {
     header .navbar.animate {
         animation: none !important;
     }
+
+    #hero .content.animate,
+    #hero .image.animate img {
+        animation: none !important;
+    }
 }

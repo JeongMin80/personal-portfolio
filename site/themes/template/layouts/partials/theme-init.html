@@ -1,0 +1,26 @@
+{{- /* Set the initial theme before stylesheets and external scripts load. */ -}}
+<script>
+    (function () {
+        const root = document.documentElement;
+        let theme = {{ .Site.Params.theme.defaultTheme | default "auto" | jsonify | safeJS }};
+
+        if (theme !== "light" && theme !== "dark") {
+            try {
+                theme = localStorage.getItem("pref-theme");
+            } catch {
+                theme = null;
+            }
+            if (theme !== "light" && theme !== "dark") {
+                theme = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
+                    ? "dark" : "light";
+            }
+        }
+
+        const dark = theme === "dark";
+        root.classList.toggle("dark", dark);
+        root.style.colorScheme = theme;
+        root.style.backgroundColor = dark
+            ? {{ .Site.Params.color.darkmode.backgroundColor | default "#18191a" | jsonify | safeJS }}
+            : {{ .Site.Params.color.backgroundColor | default "#eaedf0" | jsonify | safeJS }};
+    })();
+</script>

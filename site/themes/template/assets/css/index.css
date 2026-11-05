@@ -89,6 +89,15 @@ header .navbar.animate {
     max-width: 100%;
 }
 
+/* Start the first entrance in CSS, before the deferred reveal script runs. */
+#hero .content.animate {
+    animation: fade-left var(--section-reveal-duration) ease-out both;
+}
+
+#hero .image.animate img {
+    animation: fade-in var(--section-reveal-duration) ease-out both;
+}
+
 #hero .hero-bottom-svg {
     opacity: 0.5;
     position: absolute;
