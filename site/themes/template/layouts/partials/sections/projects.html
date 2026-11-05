@@ -30,7 +30,7 @@
                         </div>
                         <h5 class="card-title bg-transparent mt-1">
                             {{ if $detailURL }}
-                            <a class="stretched-link project-review-link" href="{{ $detailURL }}" aria-label="Read review: {{ .title }}">{{ .title }}</a>
+                            <a class="stretched-link project-review-link" href="{{ $detailURL }}" aria-label="Read more: {{ .title }}">{{ .title }}</a>
                             {{ else }}
                             {{ .title }}
                             {{ end }}
@@ -62,7 +62,7 @@
             </div>
             {{ end }}
             {{ range ( where .Site.RegularPages "Type" "projects" ) }}
-            {{ if .Params.showInHome | default true }}
+            {{ if ne .Params.showInHome false }}
             <div class="col-lg-4 col-md-6 my-3">
                 <div class="card my-3 h-100" title="{{ .Title }}">
                     <div class="card-head">

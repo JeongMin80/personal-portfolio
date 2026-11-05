@@ -108,16 +108,22 @@
     box-shadow: none !important;
 }
 
-/* Preserve image proportions while filling matching paper review frames. */
-#projects .project-card-clickable .card-head {
+/* Preserve image proportions while filling matching project card frames. */
+#projects .card .card-head {
     height: 240px;
 }
 
-#projects .project-card-clickable .card-img-top {
+#projects .card .card-img-top {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
     background-color: var(--secondary-color);
+}
+
+#projects .card .project-image-placeholder {
+    height: 100%;
+    min-height: 0;
+    aspect-ratio: auto;
 }
