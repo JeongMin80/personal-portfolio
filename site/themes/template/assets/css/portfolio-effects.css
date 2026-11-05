@@ -114,6 +114,31 @@ html.about-reveal-ready #about-heading > .about-body.about-visible {
         transform var(--section-reveal-duration) cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* Project and paper-review blocks enter at the same speed as home sections. */
+html.detail-reveal-ready #single .title,
+html.detail-reveal-ready #single .featured-image,
+html.detail-reveal-ready #single .page-content > :not(.detail-visible),
+html.detail-reveal-ready #single .sticky-sidebar {
+    opacity: 0;
+    transform: translateY(var(--section-reveal-distance));
+    transition: none;
+}
+
+html.detail-reveal-ready #single .title.detail-visible,
+html.detail-reveal-ready #single .featured-image.detail-visible,
+html.detail-reveal-ready #single .page-content > .detail-visible,
+html.detail-reveal-ready #single .sticky-sidebar.detail-visible,
+html.detail-reveal-ready #single .title:focus-within,
+html.detail-reveal-ready #single .featured-image:focus-within,
+html.detail-reveal-ready #single .page-content > *:focus-within,
+html.detail-reveal-ready #single .sticky-sidebar:focus-within {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+        opacity var(--section-reveal-duration) ease,
+        transform var(--section-reveal-duration) cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 /* Enable these transitions only while switching themes. Include movement
    properties so hovering a card still works during a color change. */
 html.theme-transitioning,
@@ -133,6 +158,10 @@ html.theme-transitioning #about-heading > .about-visible {
     transition-duration: var(--theme-transition-duration), var(--theme-transition-duration), var(--theme-transition-duration), var(--theme-transition-duration), var(--theme-transition-duration), var(--theme-transition-duration), var(--section-reveal-duration), var(--section-reveal-duration) !important;
 }
 
+html.theme-transitioning #single .detail-visible {
+    transition-duration: var(--theme-transition-duration), var(--theme-transition-duration), var(--theme-transition-duration), var(--theme-transition-duration), var(--theme-transition-duration), var(--theme-transition-duration), var(--section-reveal-duration), var(--section-reveal-duration) !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
     .scroll-reveal > * {
         opacity: 1;
@@ -144,6 +173,15 @@ html.theme-transitioning #about-heading > .about-visible {
     html.about-reveal-ready #about-heading > .about-body {
         opacity: 1;
         transform: none;
+        transition: none !important;
+    }
+
+    html.detail-reveal-ready #single .title,
+    html.detail-reveal-ready #single .featured-image,
+    html.detail-reveal-ready #single .page-content > *,
+    html.detail-reveal-ready #single .sticky-sidebar {
+        opacity: 1 !important;
+        transform: none !important;
         transition: none !important;
     }
 

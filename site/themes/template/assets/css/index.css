@@ -132,6 +132,22 @@ header .navbar.animate {
     animation: fade-in var(--section-reveal-duration) ease-out both;
 }
 
+@keyframes fade-home-return {
+    from {
+        opacity: 0.65;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+html.returning-home #hero .content.animate,
+html.returning-home #hero .image.animate img {
+    animation: fade-home-return var(--section-reveal-duration) ease-out both;
+}
+
 #hero .hero-bottom-svg {
     opacity: 0.5;
     position: absolute;

@@ -33,12 +33,21 @@
 
   document.addEventListener("click", function (event) {
     if (
-      !isHome || event.defaultPrevented || event.button !== 0 ||
+      event.defaultPrevented || event.button !== 0 ||
       event.ctrlKey || event.metaKey || event.shiftKey || event.altKey
     ) return;
 
     const link = event.target.closest("a.portfolio-home-link");
     if (!link) return;
+
+    if (!isHome) {
+      try {
+        window.sessionStorage.setItem("portfolio-return-home", "1");
+      } catch {
+        // Navigation still works when storage is unavailable.
+      }
+      return;
+    }
 
     // Also handle Home when its URL already matches the current page.
     event.preventDefault();

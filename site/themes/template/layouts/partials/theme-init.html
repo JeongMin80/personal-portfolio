@@ -22,5 +22,16 @@
         root.style.backgroundColor = dark
             ? {{ .Site.Params.color.darkmode.backgroundColor | default "#18191a" | jsonify | safeJS }}
             : {{ .Site.Params.color.backgroundColor | default "#eaedf0" | jsonify | safeJS }};
+
+        {{ if .IsHome }}
+        try {
+            if (sessionStorage.getItem("portfolio-return-home") === "1") {
+                root.classList.add("returning-home");
+                sessionStorage.removeItem("portfolio-return-home");
+            }
+        } catch {
+            // The home page is still usable when storage is unavailable.
+        }
+        {{ end }}
     })();
 </script>

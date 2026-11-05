@@ -61,15 +61,29 @@
 {{ $portfolioEffectsCSS := resources.Get "css/portfolio-effects.css" | fingerprint "sha256" }}
 {{ if and .IsHome .Site.Params.animate }}
 <script>
+    (function () {
+        const navigation = window.performance.getEntriesByType("navigation")[0];
+        if ((!navigation || navigation.type !== "back_forward") && "IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            document.documentElement.classList.add("about-reveal-ready");
+        }
+    })();
+</script>
+{{ end }}
+{{ if and .IsPage .Site.Params.animate (or (eq .Section "projects") (eq .Section "paper-reviews")) }}
+<script>
     if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        document.documentElement.classList.add("about-reveal-ready");
+        document.documentElement.classList.add("detail-reveal-ready");
     }
 </script>
 {{ end }}
 <link rel="stylesheet" href="{{ $portfolioEffectsCSS.RelPermalink }}" integrity="{{ $portfolioEffectsCSS.Data.Integrity }}" media="all">
-{{ if .Site.Params.animate }}
+{{ if and .IsHome .Site.Params.animate }}
 {{ $scrollRevealJS := resources.Get "js/scroll-reveal.js" | fingerprint "sha256" }}
 <script defer src="{{ $scrollRevealJS.RelPermalink }}" integrity="{{ $scrollRevealJS.Data.Integrity }}"></script>
+{{ end }}
+{{ if and .IsPage .Site.Params.animate (or (eq .Section "projects") (eq .Section "paper-reviews")) }}
+{{ $detailRevealJS := resources.Get "js/detail-reveal.js" | fingerprint "sha256" }}
+<script defer src="{{ $detailRevealJS.RelPermalink }}" integrity="{{ $detailRevealJS.Data.Integrity }}"></script>
 {{ end }}
 
 <style>

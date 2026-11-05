@@ -12,10 +12,12 @@
   if ((!containers.length && !aboutParts.length) || !("IntersectionObserver" in window)) return;
 
   const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const navigation = window.performance.getEntriesByType("navigation")[0];
+  const isHistoryNavigation = navigation && navigation.type === "back_forward";
   let observer;
   let pendingFrame;
 
-  function initialize() {
+  function initialize(restored) {
     if (observer) observer.disconnect();
     window.cancelAnimationFrame(pendingFrame);
 
@@ -30,6 +32,13 @@
       return;
     }
     if (aboutParts.length) document.documentElement.classList.add("about-reveal-ready");
+
+    if (restored) {
+      aboutParts.forEach(function (part) {
+        const rect = part.getBoundingClientRect();
+        part.classList.toggle("about-visible", rect.bottom > 0 && rect.top < window.innerHeight);
+      });
+    }
 
     observer = new IntersectionObserver(
       function (entries) {
@@ -65,9 +74,17 @@
     });
   }
 
-  initialize();
-  motionPreference.addEventListener("change", initialize);
+  if (!isHistoryNavigation) initialize(false);
+  motionPreference.addEventListener("change", function () {
+    initialize(true);
+  });
   window.addEventListener("pageshow", function (event) {
-    if (event.persisted) initialize();
+    // BFCache preserves the current page and its reveal state. Rebuilding that
+    // state here would briefly hide the section at the restored scroll position.
+    if (!event.persisted && isHistoryNavigation) {
+      window.requestAnimationFrame(function () {
+        initialize(true);
+      });
+    }
   });
 })();
