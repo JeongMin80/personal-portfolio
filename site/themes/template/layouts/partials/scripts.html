@@ -36,7 +36,21 @@
 
 {{- if (not .Site.Params.theme.disableThemeToggle) }}
 <script>
+    let themeTransitionTimer;
     document.getElementById("theme-toggle").addEventListener("click", () => {
+        const root = document.documentElement;
+        root.classList.add("theme-transitioning");
+        window.clearTimeout(themeTransitionTimer);
+        const durationSetting = getComputedStyle(root)
+            .getPropertyValue("--theme-transition-duration").trim();
+        const durationValue = parseFloat(durationSetting);
+        const transitionDuration = Number.isFinite(durationValue)
+            ? durationValue * (durationSetting.endsWith("ms") ? 1 : 1000)
+            : 450;
+        themeTransitionTimer = window.setTimeout(() => {
+            root.classList.remove("theme-transitioning");
+        }, transitionDuration + 50);
+
         if (document.body.className.includes("dark")) {
             document.body.classList.remove('dark');
             document.documentElement.classList.remove('dark');

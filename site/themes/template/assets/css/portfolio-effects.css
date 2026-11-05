@@ -1,0 +1,58 @@
+:root {
+    /* Adjust the entrance speed and upward travel here. */
+    --section-reveal-duration: 900ms;
+    --section-reveal-distance: 18px;
+    /* Adjust the light/dark color transition speed here. */
+    --theme-transition-duration: 450ms;
+    /* Leave room for the sticky navigation when following section links. */
+    --sticky-header-offset: 80px;
+}
+
+/* The observed container stays still, so its children's motion cannot
+   repeatedly trigger the observer at the edge of the viewport. */
+.scroll-reveal > * {
+    opacity: 0;
+    transform: translateY(var(--section-reveal-distance));
+    transition: none;
+}
+
+.scroll-reveal.is-visible > *,
+.scroll-reveal:focus-within > * {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+        opacity var(--section-reveal-duration) ease,
+        transform var(--section-reveal-duration) cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Enable these transitions only while switching themes. Include movement
+   properties so hovering a card still works during a color change. */
+html.theme-transitioning,
+html.theme-transitioning * {
+    transition-property: background-color, color, border-color, box-shadow, fill, stroke, opacity, transform !important;
+    transition-duration: var(--theme-transition-duration), var(--theme-transition-duration), var(--theme-transition-duration), var(--theme-transition-duration), var(--theme-transition-duration), var(--theme-transition-duration), 200ms, 200ms !important;
+    transition-timing-function: ease !important;
+}
+
+/* Keep the entrance speed independent of the theme transition. */
+html.theme-transitioning .scroll-reveal.is-visible > *,
+html.theme-transitioning .scroll-reveal:focus-within > * {
+    transition-duration: var(--theme-transition-duration), var(--theme-transition-duration), var(--theme-transition-duration), var(--theme-transition-duration), var(--theme-transition-duration), var(--theme-transition-duration), var(--section-reveal-duration), var(--section-reveal-duration) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scroll-reveal > * {
+        opacity: 1;
+        transform: none;
+        transition: none !important;
+    }
+
+    html.theme-transitioning,
+    html.theme-transitioning * {
+        transition: none !important;
+    }
+
+    header .navbar.animate {
+        animation: none !important;
+    }
+}

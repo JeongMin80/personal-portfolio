@@ -88,9 +88,6 @@ header .navbar.animate {
     line-height: 2rem;
     max-width: 100%;
 }
-#hero .content.animate {
-    animation: fade-left 1s ease-out;
-}
 
 #hero .hero-bottom-svg {
     opacity: 0.5;
@@ -127,9 +124,6 @@ header .navbar.animate {
     border-radius: 1rem;
 }
 
-#hero .image.animate img {
-    animation: fade-in 1s ease-out;
-}
 
 #hero a.btn.social-icon,
 #hero button.btn.social-icon {

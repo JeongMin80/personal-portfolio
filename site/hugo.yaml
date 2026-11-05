@@ -281,7 +281,7 @@ params:
     # searchPlaceholder: "Search"
     stickyNavBar:
       enable : true
-      showOnScrollUp : true
+      showOnScrollUp : false # Keep the navigation visible in both scroll directions.
     enableSeparator: false
     menus:
       disableAbout: false

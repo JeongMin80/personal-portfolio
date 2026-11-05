@@ -21,9 +21,10 @@
     }
 </script>
 
-<!-- Show header on scroll up -->
-{{ if .Site.Params.navbar.stickyNavBar.enable | default false }}
+{{ $stickyNavBarEnabled := .Site.Params.navbar.stickyNavBar.enable | default false }}
 {{ $showNavBarOnScrollUp := .Site.Params.navbar.stickyNavBar.showOnScrollUp | default false }}
+<!-- Only use scroll-direction handling when explicitly enabled. -->
+{{ if and $stickyNavBarEnabled $showNavBarOnScrollUp }}
 <script>
     var prevScrollPos = window.pageYOffset;
     window.addEventListener("scroll", function showHeaderOnScroll() {
@@ -49,7 +50,7 @@
 {{ end }}
 
 <!-- Navbar -->
-<header id="profileHeader">
+<header id="profileHeader"{{ if and $stickyNavBarEnabled (not $showNavBarOnScrollUp) }} class="showHeaderOnTop"{{ end }}>
     <nav class="pt-3 navbar navbar-expand-lg {{ if .Site.Params.animate }}animate{{ end }}">
         <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
             <!-- navbar brand -->

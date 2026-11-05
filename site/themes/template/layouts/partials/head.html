@@ -53,6 +53,13 @@
 <!-- theme -->
 <link rel="stylesheet" href="{{ (printf "%scss/theme.css" (.Site.Params.staticPath | default "")) | relURL }}" media="all">
 
+{{ $portfolioEffectsCSS := resources.Get "css/portfolio-effects.css" | fingerprint "sha256" }}
+<link rel="stylesheet" href="{{ $portfolioEffectsCSS.RelPermalink }}" integrity="{{ $portfolioEffectsCSS.Data.Integrity }}" media="all">
+{{ if .Site.Params.animate }}
+{{ $scrollRevealJS := resources.Get "js/scroll-reveal.js" | fingerprint "sha256" }}
+<script defer src="{{ $scrollRevealJS.RelPermalink }}" integrity="{{ $scrollRevealJS.Data.Integrity }}"></script>
+{{ end }}
+
 <style>
     :root {
         --text-color: {{ .Site.Params.color.textColor | default "#343a40" }};
@@ -81,6 +88,9 @@
 
     html {
         background-color: var(--background-color) !important;
+        {{ if .Site.Params.navbar.stickyNavBar.enable | default false }}
+        scroll-padding-top: var(--sticky-header-offset);
+        {{ end }}
     }
 
     body::-webkit-scrollbar {
