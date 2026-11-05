@@ -3,8 +3,13 @@
 
   const containers = Array.from(
     document.querySelectorAll("#content > section > .container")
+  ).filter(function (container) {
+    return container.id !== "about-heading";
+  });
+  const aboutParts = Array.from(
+    document.querySelectorAll("#about-heading > h3, #about-heading > .about-body")
   );
-  if (!containers.length || !("IntersectionObserver" in window)) return;
+  if ((!containers.length && !aboutParts.length) || !("IntersectionObserver" in window)) return;
 
   const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
   let observer;
@@ -17,14 +22,24 @@
     containers.forEach(function (container) {
       container.classList.remove("scroll-reveal", "is-visible");
     });
-    if (motionPreference.matches) return;
+    aboutParts.forEach(function (part) {
+      part.classList.remove("about-visible");
+    });
+    if (motionPreference.matches) {
+      document.documentElement.classList.remove("about-reveal-ready");
+      return;
+    }
+    if (aboutParts.length) document.documentElement.classList.add("about-reveal-ready");
 
     observer = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
           // Keep observing after entry: leaving the viewport resets the effect
           // for the next visit, whether the user scrolls up or down.
-          entry.target.classList.toggle("is-visible", entry.isIntersecting);
+          entry.target.classList.toggle(
+            aboutParts.includes(entry.target) ? "about-visible" : "is-visible",
+            entry.isIntersecting
+          );
         });
       },
       { threshold: 0 }
@@ -43,6 +58,9 @@
     pendingFrame = window.requestAnimationFrame(function () {
       containers.forEach(function (container) {
         observer.observe(container);
+      });
+      aboutParts.forEach(function (part) {
+        observer.observe(part);
       });
     });
   }

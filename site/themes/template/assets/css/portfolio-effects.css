@@ -96,6 +96,24 @@
         transform var(--section-reveal-duration) cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* About enters when its heading and body reach the viewport, including the
+   first page load when part of the section is already visible. */
+html.about-reveal-ready #about-heading > h3,
+html.about-reveal-ready #about-heading > .about-body {
+    opacity: 0;
+    transform: translateY(var(--section-reveal-distance));
+    transition: none;
+}
+
+html.about-reveal-ready #about-heading > h3.about-visible,
+html.about-reveal-ready #about-heading > .about-body.about-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+        opacity var(--section-reveal-duration) ease,
+        transform var(--section-reveal-duration) cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 /* Enable these transitions only while switching themes. Include movement
    properties so hovering a card still works during a color change. */
 html.theme-transitioning,
@@ -111,8 +129,19 @@ html.theme-transitioning .scroll-reveal:focus-within > * {
     transition-duration: var(--theme-transition-duration), var(--theme-transition-duration), var(--theme-transition-duration), var(--theme-transition-duration), var(--theme-transition-duration), var(--theme-transition-duration), var(--section-reveal-duration), var(--section-reveal-duration) !important;
 }
 
+html.theme-transitioning #about-heading > .about-visible {
+    transition-duration: var(--theme-transition-duration), var(--theme-transition-duration), var(--theme-transition-duration), var(--theme-transition-duration), var(--theme-transition-duration), var(--theme-transition-duration), var(--section-reveal-duration), var(--section-reveal-duration) !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
     .scroll-reveal > * {
+        opacity: 1;
+        transform: none;
+        transition: none !important;
+    }
+
+    html.about-reveal-ready #about-heading > h3,
+    html.about-reveal-ready #about-heading > .about-body {
         opacity: 1;
         transform: none;
         transition: none !important;

@@ -59,6 +59,13 @@
 <link rel="stylesheet" href="{{ (printf "%scss/theme.css" (.Site.Params.staticPath | default "")) | relURL }}" media="all">
 
 {{ $portfolioEffectsCSS := resources.Get "css/portfolio-effects.css" | fingerprint "sha256" }}
+{{ if and .IsHome .Site.Params.animate }}
+<script>
+    if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        document.documentElement.classList.add("about-reveal-ready");
+    }
+</script>
+{{ end }}
 <link rel="stylesheet" href="{{ $portfolioEffectsCSS.RelPermalink }}" integrity="{{ $portfolioEffectsCSS.Data.Integrity }}" media="all">
 {{ if .Site.Params.animate }}
 {{ $scrollRevealJS := resources.Get "js/scroll-reveal.js" | fingerprint "sha256" }}
