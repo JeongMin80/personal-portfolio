@@ -1,3 +1,15 @@
+.portfolio-closing {
+    padding: 1.5rem 1rem 2rem;
+    text-align: center;
+    color: var(--text-secondary-color);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.portfolio-closing p {
+    margin: 0;
+}
+
 /* Animation */
 @keyframes fade-in {
     0% {
