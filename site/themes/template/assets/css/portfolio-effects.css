@@ -7,6 +7,14 @@
     /* Leave room for the sticky navigation when following section links. */
     --sticky-header-offset: 80px;
 
+    /* Home 위치와 아이콘. offset이 클수록 버튼 전체가 오른쪽으로 이동합니다. */
+    --home-left-offset: 280px;
+    --home-icon-gap: 8px;
+    --home-icon-size: 18px;
+
+    /* 상단 메뉴 묶음의 오른쪽 여백. 클수록 메뉴가 왼쪽으로 이동합니다. */
+    --nav-right-gap: 200px;
+
     /* 메뉴 이동 시 제목의 추가 위쪽 여백. 작을수록 제목이 위로 올라갑니다. */
     --about-nav-gap: 130px;
     --experience-nav-gap: 130px;
@@ -15,12 +23,23 @@
 }
 
 #profileHeader .portfolio-home-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--home-icon-gap);
     color: var(--text-color) !important;
     font-size: 16px;
     font-weight: 500;
     padding: 0.5rem 0.25rem;
     margin-right: 1rem;
+    margin-left: var(--home-left-offset);
     text-decoration: none;
+}
+
+#profileHeader .portfolio-home-icon {
+    width: var(--home-icon-size);
+    height: var(--home-icon-size);
+    flex: none;
+    pointer-events: none;
 }
 
 #profileHeader .portfolio-home-link:hover {
@@ -31,6 +50,12 @@
     outline: 2px solid var(--primary-color);
     outline-offset: 3px;
     border-radius: 0.25rem;
+}
+
+@media (min-width: 992px) {
+    #profileHeader .navbar-nav {
+        margin-right: var(--nav-right-gap);
+    }
 }
 
 /* Target the stationary content container, not the section's top padding

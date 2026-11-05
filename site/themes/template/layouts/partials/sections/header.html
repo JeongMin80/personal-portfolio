@@ -54,7 +54,13 @@
     <nav class="pt-3 navbar navbar-expand-lg {{ if .Site.Params.animate }}animate{{ end }}">
         <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
             <a class="nav-link portfolio-home-link primary-font" href="{{ .Site.Home.RelPermalink }}#hero">
-                {{ i18n "nav_home" }}
+                <svg class="portfolio-home-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true" focusable="false">
+                    <path d="m3 10 9-7 9 7" />
+                    <path d="M5 9v12h5v-7h4v7h5V9" />
+                </svg>
+                <span>{{ i18n "nav_home" }}</span>
             </a>
             <!-- navbar brand -->
             {{ if not (.Site.Params.navbar.disableBrand | default false) }}
