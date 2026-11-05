@@ -2,7 +2,7 @@
 
 #projects {
     /* Space above the Project & Paper Reviews heading. */
-    --projects-top-gap: 200px;
+    --projects-top-gap: 550px;
     /* Space below the project card area. */
     --projects-bottom-gap: 30px;
     padding-top: var(--projects-top-gap) !important;

@@ -6,6 +6,33 @@
     --theme-transition-duration: 450ms;
     /* Leave room for the sticky navigation when following section links. */
     --sticky-header-offset: 80px;
+
+    /* 메뉴 이동 시 제목의 추가 위쪽 여백. 작을수록 제목이 위로 올라갑니다. */
+    --about-nav-gap: 130px;
+    --experience-nav-gap: 130px;
+    --projects-nav-gap: 130px;
+    --education-nav-gap: 130px;
+}
+
+/* Target the stationary content container, not the section's top padding
+   or the animated heading, to keep the final scroll position consistent. */
+#about-heading {
+    scroll-margin-top: var(--about-nav-gap);
+}
+
+#experience-heading {
+    scroll-margin-top: var(--experience-nav-gap);
+}
+
+#projects-heading {
+    scroll-margin-top: var(--projects-nav-gap);
+}
+
+#education-heading {
+    scroll-margin-top: var(--education-nav-gap);
+    /* Give the final section enough trailing room to reach the same position. */
+    min-height: calc(100vh - var(--sticky-header-offset) - var(--education-nav-gap));
+    min-height: calc(100svh - var(--sticky-header-offset) - var(--education-nav-gap));
 }
 
 /* The observed container stays still, so its children's motion cannot

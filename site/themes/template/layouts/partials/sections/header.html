@@ -94,7 +94,7 @@
 
                     {{ if and (.Site.Params.about.enable | default false) (not (.Site.Params.navbar.menus.disableAbout | default false)) }}
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="{{ .Site.Home.RelPermalink }}#about" aria-label="about">
+                        <a class="nav-link" href="{{ .Site.Home.RelPermalink }}#about-heading" aria-label="about">
                             {{ .Site.Params.about.title | default (i18n "nav_about") }}
                         </a>
                     </li>
@@ -102,7 +102,7 @@
 
                     {{ if and (.Site.Params.experience.enable | default false) (not (.Site.Params.navbar.menus.disableExperience | default false)) }}
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="{{ .Site.Home.RelPermalink }}#experience"
+                        <a class="nav-link" href="{{ .Site.Home.RelPermalink }}#experience-heading"
                             aria-label="experience">
                             {{ .Site.Params.experience.title | default (i18n "nav_experience") }}
                         </a>
@@ -111,7 +111,7 @@
 
                     {{ if and (.Site.Params.projects.enable | default false) (not (.Site.Params.navbar.menus.disableProjects | default false)) }}
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="{{ .Site.Home.RelPermalink }}#projects"
+                        <a class="nav-link" href="{{ .Site.Home.RelPermalink }}#projects-heading"
                             aria-label="projects">
                             {{ .Site.Params.projects.title | default (i18n "nav_projects") }}
                         </a>
@@ -120,7 +120,7 @@
 
                     {{ if and (.Site.Params.education.enable | default false) (not (.Site.Params.navbar.menus.disableEducation | default false)) }}
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="{{ .Site.Home.RelPermalink }}#education"
+                        <a class="nav-link" href="{{ .Site.Home.RelPermalink }}#education-heading"
                             aria-label="education">
                             {{ .Site.Params.education.title | default (i18n "nav_education") }}
                         </a>

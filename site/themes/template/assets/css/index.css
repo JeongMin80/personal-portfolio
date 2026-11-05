@@ -332,7 +332,7 @@ header .navbar.animate {
 
 #experience {
     /* Space above the Experience heading. */
-    --experience-top-gap: 200px;
+    --experience-top-gap: 550px;
     /* Space below the Experience content area. */
     --experience-bottom-gap: 30px;
     padding-top: var(--experience-top-gap) !important;
@@ -468,7 +468,7 @@ header .navbar.animate {
 
 #education {
     /* Space above the Education heading. */
-    --education-top-gap: 200px;
+    --education-top-gap: 500px;
     /* Space below the Education content area. */
     --education-bottom-gap: 30px;
     padding-top: var(--education-top-gap) !important;
