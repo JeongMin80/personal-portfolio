@@ -108,20 +108,20 @@
                     </li>
                     {{ end }}
 
-                    {{ if and (.Site.Params.education.enable | default false) (not (.Site.Params.navbar.menus.disableEducation | default false)) }}
-                    <li class="nav-item navbar-text">
-                        <a class="nav-link" href="{{ .Site.Home.RelPermalink }}#education"
-                            aria-label="education">
-                            {{ .Site.Params.education.title | default (i18n "nav_education") }}
-                        </a>
-                    </li>
-                    {{ end }}
-
                     {{ if and (.Site.Params.projects.enable | default false) (not (.Site.Params.navbar.menus.disableProjects | default false)) }}
                     <li class="nav-item navbar-text">
                         <a class="nav-link" href="{{ .Site.Home.RelPermalink }}#projects"
                             aria-label="projects">
                             {{ .Site.Params.projects.title | default (i18n "nav_projects") }}
+                        </a>
+                    </li>
+                    {{ end }}
+
+                    {{ if and (.Site.Params.education.enable | default false) (not (.Site.Params.navbar.menus.disableEducation | default false)) }}
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="{{ .Site.Home.RelPermalink }}#education"
+                            aria-label="education">
+                            {{ .Site.Params.education.title | default (i18n "nav_education") }}
                         </a>
                     </li>
                     {{ end }}
