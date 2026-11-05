@@ -83,6 +83,11 @@
 <script defer src="{{ $heroSocialJS.RelPermalink }}" integrity="{{ $heroSocialJS.Data.Integrity }}"></script>
 {{ end }}
 
+{{ if .IsHome }}
+{{ $homeScrollProgressJS := resources.Get "js/home-scroll-progress.js" | fingerprint "sha256" }}
+<script defer src="{{ $homeScrollProgressJS.RelPermalink }}" integrity="{{ $homeScrollProgressJS.Data.Integrity }}"></script>
+{{ end }}
+
 {{ if (.Site.Params.customScripts | default false) }}
 {{ .Site.Params.customScripts | safeHTML }}
 {{ end }}

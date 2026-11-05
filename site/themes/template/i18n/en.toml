@@ -81,3 +81,6 @@ other = "min read"
 
 [portfolio_closing]
 other = "Thank you for visiting my portfolio."
+
+[scroll_progress]
+other = "Page scroll progress"
