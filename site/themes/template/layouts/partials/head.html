@@ -4,6 +4,10 @@
 <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
 <link rel="icon" href="{{ (.Site.Params.favicon | default "fav.png") | strings.TrimPrefix "/" | relURL }}" type="image/gif">
 
+{{ $homeNavigationJS := resources.Get "js/home-navigation.js" | fingerprint "sha256" }}
+<script src="{{ $homeNavigationJS.RelPermalink }}" integrity="{{ $homeNavigationJS.Data.Integrity }}"
+    data-home-url="{{ .Site.Home.RelPermalink }}" data-is-home="{{ .IsHome }}"></script>
+
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

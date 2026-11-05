@@ -1,4 +1,7 @@
 # Navigation
+[nav_home]
+other = "Home"
+
 [nav_about]
 other = "About"
 

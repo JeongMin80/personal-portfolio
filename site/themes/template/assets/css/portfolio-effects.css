@@ -14,6 +14,25 @@
     --education-nav-gap: 130px;
 }
 
+#profileHeader .portfolio-home-link {
+    color: var(--text-color) !important;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0.5rem 0.25rem;
+    margin-right: 1rem;
+    text-decoration: none;
+}
+
+#profileHeader .portfolio-home-link:hover {
+    color: var(--primary-color) !important;
+}
+
+#profileHeader .portfolio-home-link:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 3px;
+    border-radius: 0.25rem;
+}
+
 /* Target the stationary content container, not the section's top padding
    or the animated heading, to keep the final scroll position consistent. */
 #about-heading {

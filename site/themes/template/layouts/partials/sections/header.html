@@ -53,6 +53,9 @@
 <header id="profileHeader"{{ if and $stickyNavBarEnabled (not $showNavBarOnScrollUp) }} class="showHeaderOnTop"{{ end }}>
     <nav class="pt-3 navbar navbar-expand-lg {{ if .Site.Params.animate }}animate{{ end }}">
         <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
+            <a class="nav-link portfolio-home-link primary-font" href="{{ .Site.Home.RelPermalink }}#hero">
+                {{ i18n "nav_home" }}
+            </a>
             <!-- navbar brand -->
             {{ if not (.Site.Params.navbar.disableBrand | default false) }}
             <a class="navbar-brand primary-font text-wrap" href="{{ .Site.Home.RelPermalink }}">
