@@ -145,6 +145,10 @@
     width: 15%;
 }
 
+#single.paper-review .page-content th:nth-child(2):last-child {
+    width: 80%;
+}
+
 #single.paper-review .page-content mjx-container[display="true"] {
     max-width: 100%;
     overflow-x: auto;
