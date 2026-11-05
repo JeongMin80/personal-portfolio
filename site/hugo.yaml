@@ -723,19 +723,22 @@ params:
             name: "arXiv paper"
             url: "https://arxiv.org/abs/2308.04079"
 
-      - title: Hugo Profile V2
-        content: A clean and simple Hugo template for personal portfolio and blog.
-        image: /images/projects/profile2.jpg
-        featured:
-          name: Demo V2
-          link: https://hugo-profile-2.netlify.app
+      - title: "GaussianEditor"
+        content: "A paper review of swift and controllable 3D editing with Gaussian Splatting."
+        page: "/paper-reviews/gaussianeditor/"
+        image: "/images/projects/gaussianeditor.png"
+        imageText: "GaussianEditor"
         badges:
-          - "Hugo"
-          - "Bootstrap"
-          - "Javascript"
+          - "Paper Review"
+          - "3D Editing"
+          - "Gaussian Splatting"
         links:
           - icon: fab fa-github
-            url: https://github.com/gurusabarish/HugoProfileV2
+            name: "Official GitHub repository"
+            url: "https://github.com/buaacyw/GaussianEditor"
+          - icon: fas fa-file-pdf
+            name: "arXiv paper"
+            url: "https://arxiv.org/abs/2311.14521"
 
   #Contact
   #contact:
