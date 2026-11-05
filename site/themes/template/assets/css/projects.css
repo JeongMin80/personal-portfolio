@@ -1,5 +1,14 @@
 /* projects */
 
+#projects {
+    /* Space above the Project & Paper Reviews heading. */
+    --projects-top-gap: 200px;
+    /* Space below the project card area. */
+    --projects-bottom-gap: 30px;
+    padding-top: var(--projects-top-gap) !important;
+    padding-bottom: var(--projects-bottom-gap) !important;
+}
+
 #projects h3 {
     color: var(--text-secondary-color) !important;
 }

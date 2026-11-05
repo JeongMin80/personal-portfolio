@@ -258,7 +258,7 @@ header .navbar.animate {
 /* about me */
 #about {
     /* Adjust the space between Hero and the About heading here. */
-    --hero-about-gap: 170px;
+    --hero-about-gap: 200px;
     /* Adjust the space between the About heading and its content here. */
     --about-content-gap: 30px;
     padding-top: var(--hero-about-gap) !important;
@@ -335,6 +335,15 @@ header .navbar.animate {
 }
 
 /* experience */
+
+#experience {
+    /* Space above the Experience heading. */
+    --experience-top-gap: 200px;
+    /* Space below the Experience content area. */
+    --experience-bottom-gap: 30px;
+    padding-top: var(--experience-top-gap) !important;
+    padding-bottom: var(--experience-bottom-gap) !important;
+}
 
 #experience h3 {
     color: var(--text-secondary-color) !important;
@@ -462,6 +471,15 @@ header .navbar.animate {
 }
 
 /* Education */
+
+#education {
+    /* Space above the Education heading. */
+    --education-top-gap: 200px;
+    /* Space below the Education content area. */
+    --education-bottom-gap: 30px;
+    padding-top: var(--education-top-gap) !important;
+    padding-bottom: var(--education-bottom-gap) !important;
+}
 
 #education .container > h3 {
     color: var(--text-secondary-color) !important;
