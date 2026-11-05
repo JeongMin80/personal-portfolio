@@ -1,0 +1,222 @@
+/* Typography controls for paper-review pages. */
+#single.paper-review {
+    --review-font-family: "Alata", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+    --review-font-size: 16px;
+    --review-line-height: 1.85;
+    --review-content-width: 960px;
+    --review-section-gap: 3rem;
+    font-family: var(--review-font-family);
+    font-size: var(--review-font-size);
+    line-height: var(--review-line-height);
+    color: var(--text-color);
+}
+
+#single.paper-review .paper-review-main {
+    max-width: var(--review-content-width);
+}
+
+#single.paper-review .title > h1 {
+    font-family: var(--review-font-family);
+    font-size: clamp(1.65rem, 3vw, 2.4rem);
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: -0.02em;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+    color: var(--text-color) !important;
+    opacity: 1;
+}
+
+#single.paper-review .page-content {
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+}
+
+#single.paper-review .page-content p {
+    margin: 0 0 1.2em;
+}
+
+#single.paper-review .page-content h2,
+#single.paper-review .page-content h3,
+#single.paper-review .page-content h4 {
+    font-family: var(--review-font-family);
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    color: var(--text-color) !important;
+    opacity: 1;
+}
+
+#single.paper-review .page-content h2 {
+    font-size: clamp(1.25rem, 2vw, 1.55rem);
+    margin: var(--review-section-gap) 0 1.2rem;
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid var(--text-secondary-color);
+}
+
+#single.paper-review .page-content h3 {
+    font-size: 1.15rem;
+    margin: 2rem 0 0.9rem;
+}
+
+#single.paper-review .page-content h4 {
+    font-size: 1.05rem;
+    margin: 1.6rem 0 0.75rem;
+}
+
+#single.paper-review .page-content strong {
+    font-weight: 600;
+}
+
+#single.paper-review .page-content ol,
+#single.paper-review .page-content ul {
+    padding-left: 1.5em;
+    margin: 0 0 1.4em;
+    list-style-position: outside;
+    opacity: 1;
+}
+
+#single.paper-review .page-content li + li {
+    margin-top: 0.65em;
+}
+
+#single.paper-review .page-content li > p {
+    margin: 0.4em 0;
+}
+
+#single.paper-review .page-content li > p:first-child {
+    margin-top: 0;
+}
+
+#single.paper-review .page-content li > ul,
+#single.paper-review .page-content li > ol {
+    margin-top: 0.65em;
+}
+
+#single.paper-review .page-content blockquote {
+    padding: 1.2rem 1.4rem;
+    margin: 0 0 2rem;
+    border-left-width: 3px !important;
+    border-radius: 0.75rem;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: inherit;
+    color: var(--text-color) !important;
+}
+
+#single.paper-review .page-content blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+#single.paper-review .page-content table {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0;
+    padding: 0;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0.6rem;
+    opacity: 1;
+}
+
+#single.paper-review .page-content table > thead > tr > th,
+#single.paper-review .page-content table > tbody > tr > td {
+    padding: 0.85rem 0.9rem !important;
+    border: 0;
+    border-bottom: 1px solid var(--text-secondary-color);
+    vertical-align: top;
+    text-align: left;
+    color: var(--text-color) !important;
+    background-color: var(--secondary-color) !important;
+    opacity: 1;
+}
+
+#single.paper-review .page-content table > thead > tr > th {
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+#single.paper-review .page-content th:first-child {
+    width: 20%;
+}
+
+#single.paper-review .page-content th:nth-child(2) {
+    width: 15%;
+}
+
+#single.paper-review .page-content mjx-container[display="true"] {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.9rem 0.6rem;
+    margin: 1.5rem 0 !important;
+    border-radius: 0.5rem;
+    background-color: var(--secondary-color);
+}
+
+/* Inline equations use MathJax's normal sizing, without individual scrollbars. */
+#single.paper-review .page-content td mjx-container:not([display="true"]) {
+    overflow: visible;
+}
+
+#single.paper-review .review-figure {
+    margin: 1.5rem 0 2rem;
+}
+
+#single.paper-review .review-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+#single.paper-review .review-figure figcaption {
+    margin-top: 0.75rem;
+    font-size: 0.9em;
+    text-align: center;
+    color: var(--text-secondary-color);
+}
+
+#single.paper-review .review-figure-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 180px;
+    padding: 2rem 1rem;
+    border: 1px dashed var(--text-secondary-color);
+    border-radius: 0.75rem;
+    background-color: var(--secondary-color);
+    color: var(--text-secondary-color);
+    text-align: center;
+}
+
+@media (max-width: 575.98px) {
+    #single.paper-review {
+        --review-font-size: 15px;
+        --review-section-gap: 2.3rem;
+    }
+
+    #single.paper-review .page-content table {
+        display: block;
+        table-layout: auto;
+        overflow-x: auto;
+    }
+
+    #single.paper-review .page-content th:first-child {
+        min-width: 105px;
+    }
+
+    #single.paper-review .page-content th:nth-child(2) {
+        min-width: 75px;
+    }
+
+    #single.paper-review .page-content th:last-child {
+        min-width: 250px;
+    }
+
+    #single.paper-review .page-content table > thead > tr > th,
+    #single.paper-review .page-content table > tbody > tr > td {
+        padding: 0.7rem !important;
+    }
+}

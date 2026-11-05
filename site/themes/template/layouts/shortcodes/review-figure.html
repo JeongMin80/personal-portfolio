@@ -1,0 +1,17 @@
+{{- $src := .Get "src" | strings.TrimPrefix "/" -}}
+{{- $alt := .Get "alt" | default "Paper review figure" -}}
+{{- $imagePath := printf "static/%s" $src -}}
+<figure class="review-figure">
+    {{ if os.FileExists $imagePath }}
+        {{ $size := images.Config $imagePath }}
+        <img src="{{ $src | relURL }}" alt="{{ $alt }}" width="{{ $size.Width }}" height="{{ $size.Height }}"
+            loading="lazy" decoding="async">
+    {{ else }}
+        <div class="review-figure-placeholder">
+            {{ .Get "placeholder" | default "Image coming soon" }}
+        </div>
+    {{ end }}
+    {{ with .Get "caption" }}
+        <figcaption>{{ . }}</figcaption>
+    {{ end }}
+</figure>

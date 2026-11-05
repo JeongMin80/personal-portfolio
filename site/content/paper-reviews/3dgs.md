@@ -3,7 +3,11 @@ title: "3D Gaussian Splatting: Paper Review"
 date: 2026-11-05T00:00:00+09:00
 draft: false
 description: "A study page for 3D Gaussian Splatting for Real-Time Radiance Field Rendering."
-toc: true
+hideDate: true
+enableReadingTime: false
+toc: false
+hideTags: true
+socialShare: false
 tags:
   - Paper Review
   - Computer Vision
