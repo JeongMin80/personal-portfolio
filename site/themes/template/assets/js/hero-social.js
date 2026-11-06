@@ -3,6 +3,18 @@
 
   let hideToastTimer;
 
+  const copyMessages = document.documentElement.lang.startsWith("ko")
+    ? {
+        unavailable: "이메일 주소가 아직 등록되지 않았습니다.",
+        success: "이메일 주소를 복사했습니다.",
+        failure: "이메일 주소를 복사하지 못했습니다.",
+      }
+    : {
+        unavailable: "Email address is not available yet.",
+        success: "Email copied to clipboard.",
+        failure: "Unable to copy email address.",
+      };
+
   function showToast(message) {
     let toast = document.getElementById("hero-copy-toast");
     if (!toast) {
@@ -40,7 +52,7 @@
     }
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      showToast("Email address is not available yet.");
+      showToast(copyMessages.unavailable);
       return;
     }
 
@@ -48,9 +60,9 @@
     button.setAttribute("aria-busy", "true");
     try {
       await navigator.clipboard.writeText(email);
-      showToast("Email copied to clipboard.");
+      showToast(copyMessages.success);
     } catch {
-      showToast("Unable to copy email address.");
+      showToast(copyMessages.failure);
     } finally {
       delete button.dataset.copying;
       button.removeAttribute("aria-busy");

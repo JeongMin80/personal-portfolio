@@ -18,14 +18,13 @@ languages:
     languageCode: "ko-kr"
     weight: 2
     contentDir: "content"
-    # Korean homepage copy. Translate only the text below when ready.
-    # Shared styles, images, and layout remain in the global params section.
+    # Korean homepage copy. Shared styles, images, and layout remain in the global params section.
     params:
       hero:
         enable: true
-        intro: "Hi, my name is"
+        intro: "안녕하세요, 저는"
         title: "Jeongmin Lee."
-        content: "I'm a third-year undergraduate student in the Division of Computer Science and Engineering at Jeonbuk National University, with interests in artificial intelligence and computer vision."
+        content: "전북대학교 컴퓨터공학부 3학년에 재학 중이며, 인공지능과 컴퓨터 비전 분야에 관심이 있습니다."
         image: /images/profile.png
         bottomImage:
           enable: true
@@ -57,12 +56,12 @@ languages:
         title: "About Me"
         image: ""
         content: |-
-          I became interested in computer vision while working as an undergraduate researcher, learning relevant techniques and reading research papers. Studying and researching 3D Gaussian Splatting (3DGS) and style transfer has strengthened my interest in exploring the field further.
+          학부연구생으로 활동하며 관련 기술을 익히고 논문을 읽는 과정에서 컴퓨터 비전에 관심을 갖게 되었습니다. 특히 3D Gaussian Splatting(3DGS)과 스타일 전이를 중심으로 공부하고 연구하면서 이 분야를 더 깊이 탐구하고 싶어졌습니다.
 
-          I aim to explore a broader range of topics in computer vision and deepen my understanding of artificial intelligence. I hope to use what I learn to understand and solve a variety of problems.
+          앞으로 컴퓨터 비전의 다양한 주제를 탐구하고 인공지능 전반에 대한 이해도 넓혀가고자 합니다. 배운 내용을 다양한 문제를 이해하고 해결하는 데 활용하고 싶습니다.
         skills:
           enable: true
-          title: "Technologies I've used in my studies:"
+          title: "학습 과정에서 다뤄본 기술:"
           items:
             - "Python"
             - "PyTorch"
@@ -78,52 +77,52 @@ languages:
           - company: "Holysoft Studios"
             # companyUrl: "https://example.com"
             jobs:
-              - name: "Game Development Intern"
-                date: "Jan 2026"
+              - name: "게임 개발 인턴"
+                date: "2026년 1월"
                 content: |-
-                  - Learned game development through hands-on practice during an approximately one-month internship in the Philippines.
-                  - Developed a personal game based on a self-selected concept.
-                  - Published the completed game project on GitHub.
+                  - 필리핀에서 약 한 달간 인턴십에 참여하며 실습을 통해 게임 개발을 배웠습니다.
+                  - 직접 주제를 정해 개인 게임을 개발했습니다.
+                  - 완성한 게임 프로젝트를 GitHub에 공개했습니다.
 
           - company: "VISION INTELLIGENCE LAB (VILab)"
             jobs:
-              - name: "Undergraduate Researcher"
-                date: "Mar 2026 - Aug 2026"
+              - name: "학부연구생"
+                date: "2026년 3월 - 8월"
                 content: |-
-                  - Studied research papers on 3D Gaussian Splatting (3DGS).
-                  - Participated in lab seminars.
-                  - Gave a presentation on 3D editing.
+                  - 3D Gaussian Splatting(3DGS) 관련 논문을 공부했습니다.
+                  - 연구실 세미나에 참여했습니다.
+                  - 3D Editing 관련 발표를 진행했습니다.
 
       education:
         enable: true
         title: "Education"
         index: false
         items:
-          - title: "Undergraduate student, Department of Computer Science"
+          - title: "컴퓨터공학부 학부생"
             school:
               name: "Jeonbuk National University"
               url: "https://www.jbnu.ac.kr/web/index.do"
-            date: "2022 - Present"
-            GPA: "3.81 out of 4.5"
+            date: "2022년 - 현재"
+            GPA: "3.81 / 4.5"
             content: |-
-              **Required Major Courses**
-              - **Linear Algebra:** Covers the theory and applications of linear algebra in engineering, physics, and economics, developing mathematical reasoning, problem-solving skills, and the ability to apply these concepts in computer science.
-              - **Algorithms:** Studies problem-solving methods and their efficiency as a foundation across computer science applications. Develops the ability to understand problems, design algorithms, analyze their efficiency, and create new algorithms.
-              - **Databases:** Covers the theory behind building databases from large volumes of data and retrieving information efficiently.
-              - **Artificial Intelligence:** Explores engineering approaches to implementing different aspects of human intelligence on computers and develops the skills needed to build intelligent programs.
-              - **Operating Systems:** Develops an understanding of operating system principles and their practical application through process management, memory management, virtual memory, and input/output.
-          - title: "High School"
+              **전공 필수 과목**
+              - **선형대수학:** 공학, 물리학, 경제학에서 활용되는 선형대수의 이론과 응용을 학습하고, 수학적 사고력과 문제 해결 능력을 컴퓨터공학에 적용하는 방법을 다룹니다.
+              - **알고리즘:** 문제를 이해하고 해결 방법을 설계하며, 알고리즘의 효율을 분석하고 새로운 알고리즘을 고안하는 방법을 배웁니다.
+              - **데이터베이스:** 대량의 데이터로 데이터베이스를 구축하고 필요한 정보를 효율적으로 검색하는 이론을 학습합니다.
+              - **인공지능:** 인간 지능의 여러 영역을 컴퓨터에서 구현하는 기술을 배우고 지능형 프로그램을 개발하는 방법을 다룹니다.
+              - **운영체제:** 프로세스, 메모리, 가상 메모리, 입출력 관점에서 운영체제의 기본 원리와 활용 방법을 학습합니다.
+          - title: "고등학교"
             school:
               name: "Uoosuk High School"
               url: "https://school.jbedu.kr/woosuk/index.do"
-            date: "2019 - 2021"
+            date: "2019년 - 2021년"
 
       projects:
         enable: true
         title: "Project & Paper Reviews"
         items:
           - title: "Newton: 2D Penguin Survival Game"
-            content: "A 2D survival game built with Unity and C#, where a penguin dodges falling apples and tries to survive as long as possible."
+            content: "Unity와 C#으로 제작한 2D 생존 게임입니다. 펭귄을 조작해 떨어지는 사과를 피하며 최대한 오래 살아남는 것이 목표입니다."
             page: "/projects/newton/"
             image: "/images/projects/newton.png"
             imageText: "Newton"
@@ -140,7 +139,7 @@ languages:
                 url: "https://github.com/JeongMin80/unity-game"
 
           - title: "3D Gaussian Splatting (3DGS)"
-            content: "A paper review of 3D Gaussian Splatting for real-time novel-view synthesis."
+            content: "실시간 새로운 시점 합성을 위한 3D Gaussian Splatting 논문을 리뷰했습니다."
             page: "/paper-reviews/3dgs/"
             image: "/images/projects/3dgs.png"
             imageText: "3DGS"
@@ -157,7 +156,7 @@ languages:
                 url: "https://arxiv.org/abs/2308.04079"
 
           - title: "GaussianEditor"
-            content: "A paper review of swift and controllable 3D editing with Gaussian Splatting."
+            content: "Gaussian Splatting을 이용한 빠르고 제어 가능한 3D 편집 방법을 다룬 논문을 리뷰했습니다."
             page: "/paper-reviews/gaussianeditor/"
             image: "/images/projects/gaussianeditor.png"
             imageText: "GaussianEditor"
