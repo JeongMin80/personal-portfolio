@@ -1,4 +1,4 @@
-baseURL: "https://hugo-profile.netlify.app"
+baseURL: "https://jeongmin80.github.io/personal-portfolio/"
 languageCode: "en-us"
 title: "Jeongmin Lee | Portfolio"
 
@@ -20,6 +20,7 @@ languages:
     contentDir: "content"
     # Korean homepage copy. Shared styles, images, and layout remain in the global params section.
     params:
+      description: "인공지능과 컴퓨터 비전에 관심이 있는 전북대학교 컴퓨터공학부 학생 Jeongmin Lee의 포트폴리오입니다."
       hero:
         enable: true
         intro: "안녕하세요, 저는"
@@ -211,8 +212,8 @@ markup:
       unsafe: true
 
 params:
-  title: "Hugo Profile"
-  description: Text about my cool site
+  title: "Jeongmin Lee"
+  description: "Portfolio of Jeongmin Lee, a computer science undergraduate at Jeonbuk National University interested in AI and computer vision."
   # staticPath: ""  # The path to serve the static files from
   favicon: "/images/favicon.png"
 
