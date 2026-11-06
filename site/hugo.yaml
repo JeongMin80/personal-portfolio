@@ -482,11 +482,8 @@ params:
       enable: false
       disableFeaturedImage: false
     socialNetworks:
-      github: https://github.com
-      linkedin: https://linkedin.com
-      twitter: https://twitter.com
-      instagram: https://instagram.com
-      facebook: https://facebook.com
+      github: https://github.com/JeongMin80
+      instagram: https://www.instagram.com/ljmin7239/
 
   # List pages like blogs and posts
   listPages:
