@@ -11,6 +11,13 @@
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }
 
+  function closeMobileMenu() {
+    const menu = document.getElementById("navbarContent");
+    if (menu && menu.classList.contains("show") && window.bootstrap) {
+      window.bootstrap.Collapse.getOrCreateInstance(menu, { toggle: false }).hide();
+    }
+  }
+
   if (isReload) {
     // Reload every page at its own top, keeping its language, path, and query.
     // Remove only the fragment so it cannot jump back to a section or heading.
@@ -38,6 +45,31 @@
     ) return;
 
     const link = event.target.closest("a.portfolio-home-link");
+    if (!link && isHome) {
+      const sectionLink = event.target.closest("#profileHeader .navbar-nav a.nav-link[href]");
+      if (!sectionLink) return;
+
+      const sectionURL = new URL(sectionLink.href, window.location.href);
+      if (
+        sectionURL.origin !== window.location.origin ||
+        sectionURL.pathname !== homeURL.pathname ||
+        !sectionURL.hash
+      ) return;
+
+      const target = document.getElementById(decodeURIComponent(sectionURL.hash.slice(1)));
+      if (!target) return;
+
+      // Moving within the homepage must not create a browser-history entry.
+      event.preventDefault();
+      window.history.replaceState(
+        window.history.state,
+        "",
+        window.location.pathname + window.location.search + sectionURL.hash
+      );
+      target.scrollIntoView({ block: "start" });
+      closeMobileMenu();
+      return;
+    }
     if (!link) return;
 
     if (!isHome) {
@@ -54,9 +86,6 @@
     window.history.replaceState(window.history.state, "", homeURL.pathname);
     goToTop();
 
-    const menu = document.getElementById("navbarContent");
-    if (menu && menu.classList.contains("show") && window.bootstrap) {
-      window.bootstrap.Collapse.getOrCreateInstance(menu, { toggle: false }).hide();
-    }
+    closeMobileMenu();
   });
 })();
