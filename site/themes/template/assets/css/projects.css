@@ -117,7 +117,12 @@
     box-shadow: none !important;
 }
 
-/* Preserve image proportions while filling matching project card frames. */
+/* Preserve image proportions while filling matching project card frames.
+   Cropping here is intentional: every card keeps the same 240px thumbnail
+   frame so the cards line up at every width. `cover` scales without
+   distortion and only trims the edges of the preview. The full Newton image
+   is shown on its detail page, and the full paper figures are available
+   through each card's arXiv link. */
 #projects .card .card-head {
     height: 240px;
 }
