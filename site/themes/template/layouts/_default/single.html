@@ -1,7 +1,8 @@
 {{ define "head" }}
 <meta name="description" content="{{ .Params.description }}">
 <link rel="stylesheet" href="{{ (printf "%scss/single.css" (.Site.Params.staticPath | default "")) | relURL }}">
-{{ if eq .Section "paper-reviews" }}
+{{/* Paper reviews and pages with `reviewLayout: true` (e.g. project notes) share the review design. */}}
+{{ if or (eq .Section "paper-reviews") .Params.reviewLayout }}
 {{ $paperReviewCSS := resources.Get "css/paper-review.css" | fingerprint "sha256" }}
 <link rel="stylesheet" href="{{ $paperReviewCSS.RelPermalink }}" integrity="{{ $paperReviewCSS.Data.Integrity }}" media="all">
 {{ end }}
@@ -28,7 +29,7 @@
   {{ $showSocial = .Params.socialShare }}
 {{ end }}
 {{ $showSidebar := or $showTOC $showTags $showSocial }}
-<section id="single"{{ if eq .Section "paper-reviews" }} class="paper-review"{{ end }}>
+<section id="single"{{ if or (eq .Section "paper-reviews") .Params.reviewLayout }} class="paper-review"{{ end }}>
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-sm-12 col-md-12 col-lg-9 paper-review-main">
