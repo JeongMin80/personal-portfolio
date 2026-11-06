@@ -58,6 +58,28 @@
     }
 }
 
+/* Between 992px and 1440px the fixed desktop offsets push the menu past the
+   right edge. Scale both offsets with the window width: they reach their
+   full values at 1440px, so wider screens look exactly the same as before. */
+@media (min-width: 992px) and (max-width: 1439.98px) {
+    #profileHeader .portfolio-home-link {
+        margin-left: clamp(0px, (100vw - 992px) * 0.625, var(--home-left-offset));
+    }
+
+    #profileHeader .navbar-nav {
+        margin-right: clamp(0px, (100vw - 992px) * 0.4464, var(--nav-right-gap));
+    }
+}
+
+/* Below the desktop breakpoint the menu collapses into the hamburger button.
+   Drop the desktop Home offset so Home stays on the left and the hamburger
+   button fits on the same row instead of wrapping underneath it. */
+@media (max-width: 991.98px) {
+    #profileHeader .portfolio-home-link {
+        margin-left: 0;
+    }
+}
+
 /* Target the stationary content container, not the section's top padding
    or the animated heading, to keep the final scroll position consistent. */
 #about-heading {
