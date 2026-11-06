@@ -56,7 +56,9 @@ languages:
         content: |-
           학부연구생으로 활동하며 관련 기술을 익히고 논문을 읽는 과정에서 컴퓨터 비전에 관심을 갖게 되었습니다. 특히 3D Gaussian Splatting(3DGS)과 스타일 전이를 중심으로 공부하고 연구하면서 이 분야를 더 깊이 탐구하고 싶어졌습니다.
 
-          앞으로 컴퓨터 비전의 다양한 주제를 탐구하고 인공지능 전반에 대한 이해도 넓혀가고자 합니다. 배운 내용을 다양한 문제를 이해하고 해결하는 데 활용하고 싶습니다.
+          앞으로의 학습 목표는 인공지능을 공부해 지금까지 공부한 3D Editing과 연결해 보는 것입니다. 이를 위해 먼저 딥러닝의 기초를 정리하고 리뷰했던 GaussianEditor처럼 AI 모델을 활용하는 3D 편집 논문을 다시 살펴보며 AI가 편집 과정에서 어떤 역할을 하는지 분석해 보려고 합니다.
+
+          아래 기술들은 논문 리뷰와 함께 논문의 공식 코드를 공부하면서 익혔습니다. 코드를 직접 실행해 결과물을 얻고 그 결과 이미지들을 서로 비교해 보며 각 기술을 실제로 사용해 보았습니다.
         skills:
           enable: true
           title: "학습 과정에서 다뤄본 기술:"
@@ -111,7 +113,7 @@ languages:
               - **운영체제:** 프로세스, 메모리, 가상 메모리, 입출력 관점에서 운영체제의 기본 원리와 활용 방법을 학습합니다.
           - title: "고등학교"
             school:
-              name: "Uoosuk High School"
+              name: "Woosuk High School"
               url: "https://school.jbedu.kr/woosuk/index.do"
             date: "2019년 - 2021년"
 
@@ -321,7 +323,9 @@ params:
     content: |-
       I became interested in computer vision while working as an undergraduate researcher, learning relevant techniques and reading research papers. Studying and researching 3D Gaussian Splatting (3DGS) and style transfer has strengthened my interest in exploring the field further.
 
-      I aim to explore a broader range of topics in computer vision and deepen my understanding of artificial intelligence. I hope to use what I learn to understand and solve a variety of problems.
+      My next learning goal is to study artificial intelligence and connect it with the 3D editing I have studied so far. As a first step, I plan to organize the fundamentals of deep learning and revisit 3D editing papers that use AI models, such as GaussianEditor, which I reviewed, to analyze what role AI plays in the editing process.
+
+      I learned the technologies below while reviewing papers and studying their official code. I ran the code myself to produce results and compared the resulting images, using each technology in practice.
     skills:
       enable: true
       title: "Technologies I've used in my studies:"
@@ -378,7 +382,7 @@ params:
           - **Operating Systems:** Develops an understanding of operating system principles and their practical application through process management, memory management, virtual memory, and input/output.
       - title: "High School"
         school:
-          name: "Uoosuk High School"
+          name: "Woosuk High School"
           url: "https://school.jbedu.kr/woosuk/index.do"
         date: "2019 - 2021"
 
