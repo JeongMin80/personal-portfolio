@@ -4,8 +4,10 @@
   const settings = document.currentScript.dataset;
   const homeURL = new URL(settings.homeUrl, window.location.href);
   const isHome = settings.isHome === "true";
-  const navigation = window.performance.getEntriesByType("navigation")[0];
-  const isReload = navigation && navigation.type === "reload";
+
+  // Reloading keeps the browser's default behavior: the URL (including any
+  // #section fragment) stays as it is and the browser restores the position,
+  // so a refreshed internal URL shows the same content.
 
   function goToTop() {
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
@@ -16,26 +18,6 @@
     if (menu && menu.classList.contains("show") && window.bootstrap) {
       window.bootstrap.Collapse.getOrCreateInstance(menu, { toggle: false }).hide();
     }
-  }
-
-  if (isReload) {
-    // Reload every page at its own top, keeping its language, path, and query.
-    // Remove only the fragment so it cannot jump back to a section or heading.
-    const previousRestoration = window.history.scrollRestoration;
-    window.history.scrollRestoration = "manual";
-    window.history.replaceState(
-      window.history.state,
-      "",
-      window.location.pathname + window.location.search
-    );
-    goToTop();
-    window.addEventListener("pageshow", function () {
-      goToTop();
-      window.requestAnimationFrame(function () {
-        goToTop();
-        window.history.scrollRestoration = previousRestoration;
-      });
-    }, { once: true });
   }
 
   document.addEventListener("click", function (event) {
@@ -59,10 +41,11 @@
       const target = document.getElementById(decodeURIComponent(sectionURL.hash.slice(1)));
       if (!target) return;
 
-      // Moving within the homepage must not create a browser-history entry.
+      // Each section move gets its own history entry, so the browser Back
+      // button returns to the previous position on the homepage.
       event.preventDefault();
-      window.history.replaceState(
-        window.history.state,
+      window.history.pushState(
+        null,
         "",
         window.location.pathname + window.location.search + sectionURL.hash
       );
@@ -81,11 +64,11 @@
       return;
     }
 
-    // Also handle Home when its URL already matches the current page.
+    // Home on the homepage: go to the top and record it in history,
+    // so Back returns to the section the visitor was reading.
     event.preventDefault();
-    window.history.replaceState(window.history.state, "", homeURL.pathname);
+    window.history.pushState(null, "", homeURL.pathname + window.location.search);
     goToTop();
-
     closeMobileMenu();
   });
 })();
