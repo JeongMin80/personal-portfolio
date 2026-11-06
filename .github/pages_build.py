@@ -602,6 +602,13 @@ def fix_public_paths(public, base):
         parsed = urllib.parse.urlsplit(absolute)
         if parsed.netloc != host or parsed.scheme not in ('http', 'https'):
             return value, None
+        # A full URL to another project on the same Pages host is external to
+        # this site. Keep it intact instead of matching its trailing path to
+        # this site's index.html.
+        supplied = urllib.parse.urlsplit(html.unescape(value))
+        if supplied.scheme in ('http', 'https') and supplied.netloc and prefix:
+            if parsed.path != prefix and not parsed.path.startswith(prefix + '/'):
+                return value, None
         path = urllib.parse.unquote(parsed.path)
         rel = path[len(prefix) + 1:] if prefix and path.startswith(prefix + '/') else path.lstrip('/')
         found = existing(rel)
