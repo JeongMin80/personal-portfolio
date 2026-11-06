@@ -244,6 +244,14 @@ html.returning-home #hero .image.animate img {
     box-shadow: none;
 }
 
+/* Bootstrap removes the outline on .btn:focus; show it again for keyboard
+   users only, matching the social icon buttons. */
+#hero a.btn:focus-visible,
+#hero button.btn:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
 #hero a.btn:hover,
 #hero button.btn:hover {
     background-color: var(--secondary-color) !important;
@@ -467,6 +475,22 @@ html.returning-home #hero .image.animate img {
 #experience .nav-item .nav-link:hover {
     border-bottom: 2px solid var(--primary-color);
     opacity: 0.8;
+}
+
+/* The tabs are <button> elements; keep the original text look and give
+   keyboard users a visible focus ring. */
+#experience .nav-item button.nav-link {
+    font: inherit;
+    background-color: transparent;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+#experience .nav-item .nav-link:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+    border-radius: 0.25rem;
 }
 
 #experience a {

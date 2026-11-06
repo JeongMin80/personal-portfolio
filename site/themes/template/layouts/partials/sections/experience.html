@@ -12,18 +12,21 @@
                             {{ if .jobs }}
                                 {{ $firstJobDate = (index .jobs 0).date }}
                             {{ end }}
+                            {{ $tabSlug := replaceRE "-+" "-" (replaceRE "[^a-zA-Z0-9]" "-" (print .company "-" $firstJobDate)) | lower }}
                             <li class="nav-item px-1 bg-transparent" role="presentation">
-                                <div
+                                <!-- A real button so the tab can be reached with Tab and switched with Enter/Space. -->
+                                <button
+                                    type="button"
                                     class="nav-link {{ if (eq $index 0) }}active{{ end }} bg-transparent"
-                                    aria-selected="true"
+                                    aria-selected="{{ if eq $index 0 }}true{{ else }}false{{ end }}"
                                     role="tab"
                                     data-bs-toggle="pill"
-                                    id='{{ replaceRE "-+" "-" (replaceRE "[^a-zA-Z0-9]" "-" (print .company "-" $firstJobDate)) | lower }}-tab'
-                                    data-bs-target='#pills-{{ replaceRE "-+" "-" (replaceRE "[^a-zA-Z0-9]" "-" (print .company "-" $firstJobDate)) | lower }}'
-                                    aria-controls='{{ replaceRE "-+" "-" (replaceRE "[^a-zA-Z0-9]" "-" (print .company "-" $firstJobDate)) | lower }}'
+                                    id='{{ $tabSlug }}-tab'
+                                    data-bs-target='#pills-{{ $tabSlug }}'
+                                    aria-controls='pills-{{ $tabSlug }}'
                                 >
                                     {{ .company }}
-                                </div>
+                                </button>
                             </li>
                         {{ end }}
                     </ul>
