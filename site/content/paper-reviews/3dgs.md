@@ -50,7 +50,7 @@ $$
 
 ## 3. Overall Pipeline & Differentiable Rasterization
 
-{{< review-figure src="images/projects/3dgs-pipeline.png" alt="Overall 3D Gaussian Splatting pipeline" placeholder="Pipeline image coming soon" >}}
+{{< review-figure src="images/projects/3dgs-pipeline.png" alt="Overall 3D Gaussian Splatting pipeline" placeholder="Pipeline image coming soon" caption="Figure source: Kerbl et al., 3D Gaussian Splatting for Real-Time Radiance Field Rendering, arXiv:2308.04079 (CC BY 4.0)" >}}
 
 ### Key Operation: Differentiable Tile-Based Rasterization
 

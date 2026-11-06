@@ -50,7 +50,7 @@ $$
 
 ## 3. Overall Pipeline & Differentiable Rasterization
 
-{{< review-figure src="images/projects/3dgs-pipeline.png" alt="3D Gaussian Splatting 전체 파이프라인" placeholder="파이프라인 이미지 준비 중" >}}
+{{< review-figure src="images/projects/3dgs-pipeline.png" alt="3D Gaussian Splatting 전체 파이프라인" placeholder="파이프라인 이미지 준비 중" caption="그림 출처: Kerbl et al., 3D Gaussian Splatting for Real-Time Radiance Field Rendering, arXiv:2308.04079 (CC BY 4.0)" >}}
 
 ### 핵심 연산: 미분 가능한 타일 기반 래스터화
 
