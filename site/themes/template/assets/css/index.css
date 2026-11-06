@@ -347,6 +347,22 @@ html.returning-home #hero .image.animate img {
     list-style: none;
 }
 
+/* The three wide columns above need about 740px. On narrower content areas
+   (smaller laptops, tablets, phones and browser zoom) shrink the gap and let
+   the columns wrap so no skill is cut off by overflow: hidden. */
+@media (max-width: 1399.98px) {
+    #about ul {
+        column-gap: 64px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    #about ul {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        column-gap: 24px;
+    }
+}
+
 #about ul li {
     position: relative;
     margin-bottom: 10px;
