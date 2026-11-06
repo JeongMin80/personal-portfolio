@@ -45,8 +45,20 @@
 | `site/static/images/projects/3dgs.png` | 홈 3DGS 리뷰 카드 | **외부 자료** (논문 그림 캡처) | Kerbl, Kopanas, Leimkühler, Drettakis, "3D Gaussian Splatting for Real-Time Radiance Field Rendering", arXiv:2308.04079 (<https://arxiv.org/abs/2308.04079>). arXiv 게시본 라이선스 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). 원본 그림 일부를 카드 크기에 맞춰 잘라서 사용 |
 | `site/static/images/projects/3dgs-pipeline.png` | 3DGS 리뷰 본문 (영어·한국어) | **외부 자료** (논문 그림 캡처) | 위와 같은 논문, CC BY 4.0. 본문 그림 아래에 출처 캡션 표시 |
 | `site/static/images/projects/gaussianeditor.png` | 홈 GaussianEditor 리뷰 카드 | **외부 자료** (논문 그림 캡처) | Chen et al., "GaussianEditor: Swift and Controllable 3D Editing with Gaussian Splatting", arXiv:2311.14521 (<https://arxiv.org/abs/2311.14521>). arXiv 게시본 라이선스는 [arXiv non-exclusive distribution license](https://arxiv.org/licenses/nonexclusive-distrib/1.0/)로, 재사용 허락이 포함되지 않음. 저작권은 원저자에게 있으며 논문 리뷰 목적의 인용으로만 사용 |
+| `site/static/images/projects/newton-intro.png`, `newton-play.png`, `newton-gameover.png`, `newton-shop.png` | Newton 상세 페이지 결과물 (영어·한국어) | **직접 제작** (본인 게임 화면 캡처) | 본인이 만든 게임 Newton(<https://github.com/JeongMin80/unity-game>)을 직접 플레이하며 캡처. 화면 속 게임 에셋의 출처는 아래 "Newton 게임 안의 에셋" 참고 |
 | `site/static/images/favicon.png`, `site/static/fav.png` | 브라우저 탭 아이콘 | 테마 자료 | Hugo Profile 테마 (MIT) |
 | `site/static/images/achievement.jpg`, `hero.svg`, `mathjax.png`, `me.png`, `post.jpg`, `projects/converter.jpg`, `projects/profile.png`, `projects/profile2.jpg` | 사용하지 않음 | 테마 예시 자료 | Hugo Profile 테마 exampleSite (MIT). 사이트 화면에는 표시되지 않음 |
+
+### Newton 게임 안의 에셋
+
+위 캡처 화면에 보이는 게임 안의 그림과 소리는 Newton 게임 저장소(<https://github.com/JeongMin80/unity-game>)에 포함된 자료입니다.
+
+| 자료 | 구분 | 출처 / 이용 조건 |
+|---|---|---|
+| 펭귄 캐릭터 이미지, 움직임 애니메이션 | **외부 자료** (무료 에셋) | Unity Asset Store 등에서 무료로 배포되는 에셋을 내려받아 사용. 에셋 이름과 제작자는 개발 당시 기록하지 않아 확인하지 못함 |
+| 배경 음악 | **외부 자료** (무료 에셋) | 위와 같음 |
+| 사과 이미지 | **AI 생성** | 이미지 생성 AI로 제작 (도구명 미표시) |
+| 게임 규칙, 기획, 게임 로직 C# 스크립트 | **직접 제작** | 본인 작성. Animator 설정 문제는 인턴십 사수의 도움을 받아 해결 |
 
 ## 5. 글과 코드
 
@@ -54,6 +66,7 @@
 |---|---|---|
 | 사이트 소개 문구 (`site/hugo.yaml`의 Hero·About·Experience·Education) | **AI 초안 + 직접 수정** | AI가 만든 초안을 본인이 검토하고 수정. 영어·한국어 번역에도 AI 사용 |
 | 논문 리뷰 4편 (`site/content/paper-reviews/*.md`) | **AI 초안 + 직접 수정** | AI 초안을 본인이 논문과 대조해 검토·수정. 논문 내용의 저작권은 각 원저자에게 있음 |
+| Newton 프로젝트 페이지 (`site/content/projects/newton*.md`) | **본인 내용 + AI 문장 정리** | 프로젝트 경험과 사실은 본인이 직접 설명하고, AI가 문장으로 정리한 것을 본인이 검토·수정. 영어 페이지는 한국어 페이지를 AI로 번역 |
 | 테마 수정 코드 (`site/themes/template/` 아래 CSS·JS·레이아웃) | **직접 수정 + AI 도움** | AI 코딩 도구의 제안을 본인이 검토해 반영하고, 브라우저에서 동작을 확인. 변경 내용과 이유는 각 커밋 메시지와 코드 주석에 기록 |
 
 AI 활용의 구체적인 사례(요청 원문, 응답, 본인 판단, 반영 위치, 검증)는 과제 보고서의 AI 활용 기록에 정리합니다.
