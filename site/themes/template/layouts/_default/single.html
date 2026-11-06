@@ -132,8 +132,10 @@
       </div>
     </div>
   </div>
-  <button class="p-2 px-3" onclick="topFunction()" id="topScroll">
-    <i class="fas fa-angle-up"></i>
+  {{/* Icon-only button: aria-label gives it an accessible name (P46); the icon itself is decorative. */}}
+  {{ $topLabel := cond (eq .Site.Language.Lang "ko") "맨 위로 이동" "Back to top" }}
+  <button type="button" class="p-2 px-3" onclick="topFunction()" id="topScroll" aria-label="{{ $topLabel }}" title="{{ $topLabel }}">
+    <i class="fas fa-angle-up" aria-hidden="true"></i>
   </button>
 </section>
 
