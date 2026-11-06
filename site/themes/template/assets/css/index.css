@@ -157,7 +157,9 @@ html.returning-home #hero .image.animate img {
 
 #hero .subtitle {
     font-size: clamp(14px,5vw,16px);
-    opacity: 0.6;
+    /* 0.6 gave only 3.32:1 contrast in light mode. 0.75 keeps the muted look
+       and reaches about 4.9:1, above the 4.5:1 needed for 16px text. */
+    opacity: 0.75;
 }
 
 #hero h1 {
