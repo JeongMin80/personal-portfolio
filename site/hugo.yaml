@@ -47,9 +47,6 @@ languages:
               name: "Copy email address"
               action: "copy-email"
               url: "leejeongmin2838@gmail.com"
-            - icon: fas fa-blog
-              name: "Blog"
-              url: "#"
 
       about:
         enable: true
@@ -314,9 +311,6 @@ params:
           name: "Copy email address"
           action: "copy-email"
           url: "leejeongmin2838@gmail.com"
-        - icon: fas fa-blog
-          name: "Blog"
-          url: "#"
 
   # About
   about:
