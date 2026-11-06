@@ -565,9 +565,9 @@ def dependencies(root):
                 run(['npm', command, '--ignore-scripts', '--no-audit', '--no-fund'], folder)
             except subprocess.CalledProcessError:
                 run(['npm', 'install', '--ignore-scripts', '--no-audit', '--no-fund', '--legacy-peer-deps'], folder)
-    # CLI tools absent from older theme packages are installed in an isolated directory.
+    # Install optional asset CLIs only when this site has asset build commands.
     tool_dir = root / '.pages-tools'
-    if not all(shutil.which(name) for name in ('postcss', 'tailwindcss', 'pagefind')):
+    if state.get('asset_build') and not all(shutil.which(name) for name in ('postcss', 'tailwindcss', 'pagefind')):
         tool_dir.mkdir(exist_ok=True)
         run(['npm', 'install', '--ignore-scripts', '--no-audit', '--no-fund',
              'postcss-cli@11', 'postcss@8', 'autoprefixer@10', '@tailwindcss/cli@4', 'pagefind@1.5.2'], tool_dir)
