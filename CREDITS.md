@@ -15,8 +15,10 @@
 | 사용 위치 | `site/themes/template/` (테마 원본을 복사한 뒤 레이아웃·CSS·JS를 직접 수정) |
 | 수정 내용 | 수정 이력은 Git 커밋 기록에서 확인할 수 있습니다. |
 
-저장소 루트의 `layouts/`, `static/`, `exampleSite/`, `wiki/`, `README.md`, `theme.toml` 등은
+저장소 루트의 `layouts/`, `static/`, `exampleSite/`, `wiki/`, `theme.toml` 등은
 다운로드한 테마 ZIP 원본이며, 사이트 빌드에는 `site/` 폴더만 사용합니다.
+테마 원본 README는 [`THEME_README.md`](THEME_README.md)로 이름만 바꿔 그대로 보존했고,
+루트 [`README.md`](README.md)는 이 사이트의 실행·수정·배포 안내로 새로 작성했습니다.
 
 ## 2. 빌드·배포 도구
 
