@@ -13,11 +13,27 @@
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }
 
-  function closeMobileMenu() {
+  // Close the collapsed (mobile) menu first and run the callback only after
+  // it has finished closing. Scrolling while the open menu still takes up
+  // space would land past the target once the menu height disappears.
+  function afterMobileMenuClosed(callback) {
     const menu = document.getElementById("navbarContent");
-    if (menu && menu.classList.contains("show") && window.bootstrap) {
-      window.bootstrap.Collapse.getOrCreateInstance(menu, { toggle: false }).hide();
+    const isOpen = menu && (menu.classList.contains("show") || menu.classList.contains("collapsing"));
+    if (!isOpen || !window.bootstrap) {
+      callback();
+      return;
     }
+
+    let done = false;
+    const finish = function () {
+      if (done) return;
+      done = true;
+      callback();
+    };
+    menu.addEventListener("hidden.bs.collapse", finish, { once: true });
+    // Fallback in case the transition event never fires.
+    window.setTimeout(finish, 700);
+    window.bootstrap.Collapse.getOrCreateInstance(menu, { toggle: false }).hide();
   }
 
   document.addEventListener("click", function (event) {
@@ -49,8 +65,9 @@
         "",
         window.location.pathname + window.location.search + sectionURL.hash
       );
-      target.scrollIntoView({ block: "start" });
-      closeMobileMenu();
+      afterMobileMenuClosed(function () {
+        target.scrollIntoView({ block: "start" });
+      });
       return;
     }
     if (!link) return;
@@ -68,7 +85,6 @@
     // so Back returns to the section the visitor was reading.
     event.preventDefault();
     window.history.pushState(null, "", homeURL.pathname + window.location.search);
-    goToTop();
-    closeMobileMenu();
+    afterMobileMenuClosed(goToTop);
   });
 })();
