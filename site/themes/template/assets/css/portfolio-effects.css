@@ -46,6 +46,15 @@
     color: var(--primary-color) !important;
 }
 
+/* theme.css and single.css remove the outline from these buttons.
+   Show a ring only for keyboard focus, like the other controls. */
+#theme-toggle:focus-visible,
+#single #topScroll:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 3px;
+    border-radius: 0.25rem;
+}
+
 #profileHeader .portfolio-home-link:focus-visible {
     outline: 2px solid var(--primary-color);
     outline-offset: 3px;
